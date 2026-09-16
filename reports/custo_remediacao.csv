@@ -1,0 +1,10 @@
+recorte,grupo,politica,pessoas_ajustadas,custo_anual,ajuste_medio_pct,corrige_casos_individuais,pct_da_folha_anual
+genero,Feminino,nivelamento individual,432,12683734.756,0.1399,True,0.0286
+genero,Feminino,ajuste uniforme no grupo,754,5794764.6758,0.0318,False,0.0131
+genero,Feminino,nivelamento ao piso da faixa,305,8008739.2927,0.1629,False,0.0181
+raca_cor,Preta,nivelamento individual,121,4155222.0753,0.1427,True,0.0094
+raca_cor,Preta,ajuste uniforme no grupo,224,1620446.8607,0.0265,False,0.0036
+raca_cor,Preta,nivelamento ao piso da faixa,85,2042789.4276,0.1434,False,0.0046
+raca_cor,Parda,nivelamento individual,292,9890148.5979,0.1392,True,0.0223
+raca_cor,Parda,ajuste uniforme no grupo,542,4004063.9836,0.0287,False,0.009
+raca_cor,Parda,nivelamento ao piso da faixa,203,5743888.6434,0.1706,False,0.013

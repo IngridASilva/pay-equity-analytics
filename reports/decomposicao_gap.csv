@@ -1,0 +1,7 @@
+recorte,especificacao,grupo,n,gap_bruto,explicado,nao_explicado,ic95_inferior,ic95_superior,pct_explicado,significante
+genero,mesmo cargo (controla grade),Feminino,754,0.1527,0.1214,0.0313,0.0169,0.0461,0.795,True
+genero,carreira (grade como resultado),Feminino,754,0.1527,0.0936,0.0591,0.019,0.0947,0.613,True
+raca_cor,mesmo cargo (controla grade),Preta,224,-0.0067,-0.0329,0.0262,0.0003,0.0486,4.914,True
+raca_cor,carreira (grade como resultado),Preta,224,-0.0067,-0.0114,0.0047,-0.0623,0.0646,1.704,False
+raca_cor,mesmo cargo (controla grade),Parda,542,0.032,0.0038,0.0283,0.0105,0.0457,0.117,True
+raca_cor,carreira (grade como resultado),Parda,542,0.032,0.02,0.012,-0.0274,0.0554,0.625,False

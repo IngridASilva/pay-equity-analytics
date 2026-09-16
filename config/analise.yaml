@@ -1,0 +1,18 @@
+# Parâmetros da análise de equidade.
+
+mes_referencia: null          # null = último mês disponível da base
+bootstrap: 500
+n_minimo_exposicao: 5
+
+recortes:
+  - coluna: genero
+    referencia: Masculino
+    comparados: [Feminino]
+  - coluna: raca_cor
+    referencia: Branca
+    comparados: [Preta, Parda]
+
+remediacao:
+  fator_encargos: 1.94
+  meses: 12
+  teto_ajuste_individual: 0.25
