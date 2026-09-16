@@ -11,7 +11,12 @@ import pandas as pd
 import pytest
 
 from equity.data import montar, panorama, suprimir
-from equity.gap import CONTROLES_BASE, CONTROLES_COM_CARGO, decompor, rodar_duas_especificacoes
+from equity.gap import (
+    CONTROLES_BASE,
+    CONTROLES_COM_CARGO,
+    decompor,
+    rodar_duas_especificacoes,
+)
 from equity.remediation import ParametrosRemediacao, resumir_politicas
 
 # Valores injetados em config/params.yaml do gerador da base.
@@ -59,7 +64,7 @@ def test_recupera_a_penalidade_injetada(df, rng):
     """
     decs = rodar_duas_especificacoes(df, "genero", "Masculino", "Feminino",
                                      rng, n_bootstrap=300)
-    cargo = [d for d in decs if "mesmo cargo" in d.especificacao][0]
+    cargo = next(d for d in decs if "mesmo cargo" in d.especificacao)
     alvo = GABARITO_ENTRADA["Feminino"]
     inf, sup = cargo.ic_nao_explicado
     assert inf > 0, "penalidade injetada não foi detectada"
@@ -75,8 +80,8 @@ def test_controlar_por_grade_reduz_o_nao_explicado(df, rng):
     """
     decs = rodar_duas_especificacoes(df, "genero", "Masculino", "Feminino",
                                      rng, n_bootstrap=0)
-    cargo = [d for d in decs if "mesmo cargo" in d.especificacao][0]
-    carreira = [d for d in decs if "carreira" in d.especificacao][0]
+    cargo = next(d for d in decs if "mesmo cargo" in d.especificacao)
+    carreira = next(d for d in decs if "carreira" in d.especificacao)
     assert carreira.nao_explicado > cargo.nao_explicado
 
 

@@ -101,14 +101,14 @@ def resumir_politicas(df: pd.DataFrame, coluna_grupo: str, referencia: str,
         },
         {
             "politica": "ajuste uniforme no grupo",
-            "pessoas_ajustadas": int(len(alvo)),
+            "pessoas_ajustadas": len(alvo),
             "custo_anual": float(custo_uniforme),
             "ajuste_medio_pct": float(np.exp(gap_nao_explicado) - 1),
             "corrige_casos_individuais": False,
         },
         {
             "politica": "nivelamento ao piso da faixa",
-            "pessoas_ajustadas": int(len(abaixo_piso)),
+            "pessoas_ajustadas": len(abaixo_piso),
             "custo_anual": float(custo_piso),
             "ajuste_medio_pct": float(
                 (0.80 / abaixo_piso["compa_ratio"] - 1).mean()

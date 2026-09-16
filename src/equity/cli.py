@@ -60,7 +60,9 @@ def main() -> None:
             print("\nRepresentação por grade:")
             print(representacao_por_faixa(df, col, grupo).to_string(index=False))
 
-            spec_cargo = [d for d in decs if "mesmo cargo" in d.especificacao][0]
+            spec_cargo = next(
+                d for d in decs if "mesmo cargo" in d.especificacao
+            )
             pol = resumir_politicas(
                 df, col, ref, [grupo], spec_cargo.nao_explicado,
                 ParametrosRemediacao(**cfg["remediacao"]),

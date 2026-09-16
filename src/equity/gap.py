@@ -81,7 +81,6 @@ class Decomposicao:
 def matriz(df: pd.DataFrame, controles: list[str]) -> tuple[np.ndarray, list[str]]:
     """Matriz de desenho com intercepto e dummies, categorias alinhadas."""
     cats = [c for c in controles if c in CATEGORICAS]
-    nums = [c for c in controles if c not in CATEGORICAS]
     X = pd.get_dummies(df[controles], columns=cats, drop_first=True, dtype=float)
     X.insert(0, "intercepto", 1.0)
     return X.to_numpy(dtype=float), list(X.columns)
@@ -106,7 +105,7 @@ def decompor(
     sub = df[df[coluna_grupo].isin([referencia, comparado])].copy()
 
     # Colunas alinhadas entre os dois grupos: dummies precisam da mesma base.
-    X_todos, nomes = matriz(sub, controles)
+    X_todos, _ = matriz(sub, controles)
     y = np.log(sub["salario"].to_numpy(dtype=float))
     eh_ref = (sub[coluna_grupo] == referencia).to_numpy()
 
