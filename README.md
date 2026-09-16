@@ -1,5 +1,7 @@
 # pay-equity-analytics
 
+![CI](https://github.com/IngridASilva/pay-equity-analytics/actions/workflows/ci.yml/badge.svg)
+
 Decomposição de gap salarial por gênero e raça/cor, com intervalos de
 confiança, verificação contra gabarito e custo de remediação. Base sintética:
 [hr-synthetic-data-br](../hr-synthetic-data-br), cenário com desigualdade
